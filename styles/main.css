@@ -12,6 +12,8 @@
   --Light-grayish-cyan: hsl(185, 41%, 84%);
   --Very-light-grayish-cyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
+
+  --error: hsl(7, 73%, 74%);
 }
 
 html {
@@ -46,6 +48,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.3rem;
+  justify-content: space-around;
 }
 
 input,
@@ -66,6 +69,7 @@ h1 {
 h3 {
   font-size: 1.6rem;
   color: var(--Dark-grayish-cyan);
+  margin: 0;
 }
 
 input {
@@ -78,6 +82,10 @@ input {
   font-size: 2.4rem;
   text-align: right;
   color: var(--Very-dark-cyan);
+}
+
+input:focus {
+  border: 2px solid var(--Strong-cyan);
 }
 
 .entries p {
@@ -98,6 +106,7 @@ input {
 }
 
 .grid-tip-percentage {
+  margin-block-start: 2rem;
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
@@ -125,7 +134,7 @@ button {
   color: var(--Very-dark-cyan);
 }
 
-.grid-tip-percentage button:active {
+.grid-tip-percentage button.active {
   background-color: var(--Strong-cyan);
   color: var(--Very-dark-cyan);
 }
@@ -154,6 +163,9 @@ button {
   margin-top: 2rem;
 }
 
+.reset:active {
+  background-color: var(--Strong-cyan);
+}
 
 .result-description p {
   font-size: 1.5rem;
@@ -189,6 +201,17 @@ footer {
   width: 100%;
 }
 
+
+.error {
+  color: var(--error);
+  font-size: 1.6rem;
+  display: none;
+}
+
+.isError {
+  border: 2px solid var(--error);
+}
+
 @media only screen and (min-width: 765px) {
   main {
     flex-direction: row;
@@ -199,5 +222,9 @@ footer {
 
   .reset {
     margin-top: 8rem;
+  }
+
+  .result div h2 {
+    font-size: 4.8rem;
   }
 }
