@@ -12,61 +12,76 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="styles/main.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  
 </head>
 <body>
 
   <h1>SPLI <br>TTER </h1>
 
   <main>
-    <div>
+    <div class="entries">
       <div>
         <h3>Bill</h3>
-        <input type="text">
+        <p>
+          <span>$</span>
+          <input id="bill" type="number" placeholder="0" min="0" max="999">
+        </p>
       </div>
       <div>
         <h3>Select Tip %</h3>
-        <div>
-          <button type="button">5%</button>
-          <button type="button">10%</button>
-          <button type="button">15%</button>
-          <button type="button">25%</button>
-          <button type="button">50%</button>
-          <input type="text">
+        <div class="grid-tip-percentage">
+          <button class="percentage" type="button" data-percentage="5">5%</button>
+          <button class="percentage" type="button" data-percentage="10">10%</button>
+          <button class="percentage" type="button" data-percentage="15">15%</button>
+          <button class="percentage" type="button" data-percentage="25">25%</button>
+          <button class="percentage" type="button" data-percentage="50">50%</button>
+          <input id="custom" type="number" placeholder="Custom" min="1" max="100">
         </div>
       </div>
       <div>
         <h3>Number of People</h3>
-        <input type="text">
+        <p>
+          <span class="icon-people">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <input type="number" placeholder="0" maxlength="3" min="1" max="100">
+        </p>
       </div>
     </div>
 
-    <div>
-      <div>
-        <p>
-          Tip Amount
-          <span>/ person</span>
-        </p>
-        <h2>$4.27</h2>
+    <div class="result flex">
+      <div class="flex">
+        <div class="result-description">
+          <p>
+            Tip Amount <br>
+            <span>/ person</span>
+          </p>
+        </div>
+        <h2 id="tip_amount">$0.00</h2>
       </div>
-      <div>
-        <p>
-          Tip Amount
-          <span>/ person</span>
-        </p>
-        <h2>$32.79</h2>
+      <div class="flex">
+        <div class="result-description">
+          <p>
+            Tip Amount <br>
+            <span>/ person</span>
+          </p>
+        </div>
+        <h2>$0.00</h2>
       </div>
+      <button class="reset" type="button" disabled="disabled">RESET</button>
     </div>
   </main>
   
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/elmersan" target="_blank">elmersan</a>.
+    </p>
   </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
